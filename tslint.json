@@ -13,7 +13,8 @@
         "object-literal-sort-keys": false,
         "no-reference": false,
         "no-trailing-whitespace": false,
-        "no-angle-bracket-type-assertion": false
+        "no-angle-bracket-type-assertion": false,
+        "max-classes-per-file": false
     },
     "rulesDirectory": []
 }

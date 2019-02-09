@@ -9,9 +9,12 @@ module.exports = {
 const GOOGLE_URL = "https://www.google.com/searchbyimage?site=search&sa=X&image_url="; // + imgur link
 // tslint:disable-next-line:max-line-length
 const USER_AGENT = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.85 Safari/537.36";
-function ReverseSearch(data, onComplete) {
+function ReverseSearch(data, onComplete, emitStatus) {
+    emitStatus("Uploading image to imgur...");
     UploadImgur(data, (link) => {
+        emitStatus("Sending request to Google...");
         QueryGoogle(link, (html) => {
+            emitStatus("Parsing response...");
             const $ = cheerio.load(html);
             const val = $("input[type=text]");
             onComplete(val.attr("value"));

@@ -2,11 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Is it CMU?</title>
 
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="assets/loader.css" rel="stylesheet" type="text/css">
     
+    <script src="lib/knockout.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="src/app.js"></script>
   </head>
@@ -17,13 +19,41 @@
         <h1>Is it CMU?</h1>
       </div>
 
-        <div class="content">
-          <p>Welcome to <em>Is it CMU?</em></p>
+      <div class="content">
+        <p>Welcome to <em>Is it CMU?</em></p>
+        
+        <div class="methodSelect" data-bind="visible: currentScreen() === 'methodSelect'">
+          <div id="imageSelect" data-bind="click: setScreen('imgUploadArea')">
+            <img src="assets/image.svg">
+            <p>Image</p>
+          </div>
+
+          <div id="textSelect" data-bind="click: setScreen('textEntryArea')">
+            <img src="assets/edit.svg">
+            <p>Text</p>
+          </div>
         </div>
 
-        <input type="file" id="file" accept="image/png">
-        <input type="text" id="text" placeholder="Enter some text..."> 
-        <button id="textSubmit">Is it CMU?</button>
+        <div id="imgUploadArea" data-bind="visible: currentScreen() === 'imgUploadArea'">
+          <input type="file" id="file" accept="image/png">
+          <button id="imgSubmit">Is it CMU?</button>
+
+          <p class="backLink" data-bind="click: setScreen('methodSelect')">Back</p>
+        </div>
+
+        <div id="textEntryArea" data-bind="visible: currentScreen() === 'textEntryArea'">
+          <input type="text" id="text" placeholder="Enter some text..."> 
+          <button id="textSubmit">Is it CMU?</button>
+
+          <p class="backLink" data-bind="click: setScreen('methodSelect')">Back</p>
+        </div>
+
+        <div id="statusArea" data-bind="visible: currentScreen() === 'statusArea'">
+          <div class="loader"></div>
+          <p id="workArea" data-bind="text: status"></p>
+          <h2>Working...🤔🤔🤔</h2>
+        </div>
+      </div>
     </div>
   </body>
 </html>

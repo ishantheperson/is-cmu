@@ -29,6 +29,8 @@ io.on("connection", function (socket) {
   socket.on("imageData", (data) => {
     reverseImgSearch.ReverseSearch(data, (result) => {
       console.log("Yeet got this: ", result);
+    }, (status) => {
+      socket.emit("status", status);
     });
   });
 });

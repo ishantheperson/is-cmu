@@ -80,11 +80,10 @@ button:focus {
 }
 
 .main {
-  margin: 3em auto;
-  padding: 3em 2em;
+  margin: 3em auto 0em auto;
+  padding: 3em 2em 2em 2em;
   max-width: 1000px;
   width: 75%;
-
   background-color: #C41230;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 25px;
@@ -131,4 +130,31 @@ tr:nth-child(even) {
 video {
   max-width: 100%;
   max-height: 100%;
+}
+
+.methodSelect div {
+  cursor: pointer;
+  display: inline-block;
+  padding: 2em;
+}
+
+.methodSelect div:hover {
+  transition-duration: 0.5s;
+  background: #b20707 none;
+}
+
+.methodSelect img {
+  max-width: 100%;
+  width: 200px;
+}
+
+.methodSelect p {
+  text-align: center;
+  margin: 0 0 0.5em 0;
+}
+
+.backLink {
+  text-align: center;
+  cursor: pointer;
+  text-decoration: underline;
 }

@@ -12,9 +12,12 @@ const GOOGLE_URL = "https://www.google.com/searchbyimage?site=search&sa=X&image_
 // tslint:disable-next-line:max-line-length
 const USER_AGENT = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.85 Safari/537.36";
 
-function ReverseSearch(data: string, onComplete: (data: string) => any) {
+function ReverseSearch(data: string, onComplete: (data: string) => any, emitStatus: (status: string) => any) {
+  emitStatus("Uploading image to imgur...");
   UploadImgur(data, (link) => {
+    emitStatus("Sending request to Google...");
     QueryGoogle(link, (html) => {
+      emitStatus("Parsing response...");
       const $ = cheerio.load(html);
       const val = $("input[type=text]");
 
