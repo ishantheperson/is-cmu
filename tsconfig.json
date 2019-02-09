@@ -7,7 +7,8 @@
   },
   "include": [
     "static/src/*",
-    "text-parser/*"
+    "text-parser/*",
+    "reverse-image-search/*"
   ],
   "exclude": [
     "node_modules/"
