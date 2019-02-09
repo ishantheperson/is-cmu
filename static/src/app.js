@@ -17,7 +17,7 @@ class SocketWrapper {
             }
             else { // data.type === "parser"
                 viewmodel.setScreen("parserResultArea");
-                viewmodel.setData(data.phrase);
+                viewmodel.setData(data.data);
             }
         });
         this.socket.on("imageResult", (data) => {
@@ -58,6 +58,30 @@ class IsCMU {
     }
     setData(data) {
         this.data(data);
+    }
+    getName() {
+        try {
+            return this.data().first_name + " " + this.data().last_name;
+        }
+        catch (error) {
+            return "";
+        }
+    }
+    getImageCaption() {
+        try {
+            return this.data().result;
+        }
+        catch (error) {
+            return "";
+        }
+    }
+    getMatch() {
+        try {
+            return this.data().match;
+        }
+        catch (error) {
+            return "";
+        }
     }
 }
 document.addEventListener("DOMContentLoaded", () => {

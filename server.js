@@ -19,7 +19,7 @@ io.on("connection", function (socket) {
 
   socket.on("textData", (data) => {
     socket.emit("status", "Server received text");
-    
+
     const parserResult = textParser.ParseKeywords(data);
     console.log(parserResult);
   
@@ -27,7 +27,7 @@ io.on("connection", function (socket) {
       socket.emit("textResult", {
         success: true,
         type: "parser",
-        phrase: parserResult.join(' ')
+        data: { match: parserResult.join(' ') }
       })
 
       return; // We don't need to do a dictionary lookup if the parser succeeded
@@ -57,7 +57,7 @@ io.on("connection", function (socket) {
 
       socket.emit("imageResult", {
         success: isCMU, 
-        data: result // the result from the reverse image search
+        data: { result } // the result from the reverse image search
       })
 
     }, (status) => {

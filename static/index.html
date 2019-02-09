@@ -57,7 +57,7 @@
         <!-- Result areas -->
         <div id="parserResultArea" data-bind="visible: currentScreen() === 'parserResultArea'">
           <h2>Success!</h2>
-          <p>That was CMU! (match: <span style="font-weight: bold" data-bind="text: data"></span>)</p>
+          <p>That was CMU! (match: <span style="font-weight: bold" data-bind="text: getMatch()"></span>)</p>
 
           <p class="backLink" data-bind="click: setScreen('methodSelect')">
             Try again?
@@ -67,7 +67,7 @@
         <div id="dictLookupArea" data-bind="visible: currentScreen() === 'dictLookupArea'">
           <h2>Success!</h2>
           <p>That was CMU!</p>
-          <p><b>Andrew ID: </b><span data-bind="text: data().first_name + ' ' + data().last_name"></span></p>
+          <p><b>Andrew ID: </b><span data-bind="text: getName()"></span></p>
 
           <p class="backLink" data-bind="click: setScreen('methodSelect')">
             Try again?
@@ -79,7 +79,7 @@
           <p>That was CMU!</p>
           <p>
             <b>Image subject: </b>
-            <p data-bind="text: data().result"></p>
+            <p data-bind="text: getImageCaption()"></p>
           </p>
         </div>
 

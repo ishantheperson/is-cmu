@@ -24,7 +24,7 @@ class SocketWrapper {
       }
       else { // data.type === "parser"
         viewmodel.setScreen("parserResultArea");
-        viewmodel.setData(data.phrase);
+        viewmodel.setData(data.data);
       }
     });
 
@@ -79,6 +79,33 @@ class IsCMU {
 
   public setData(data: any) {
     this.data(data);
+  }
+
+  public getName(): string {
+    try {
+      return this.data().first_name + " " + this.data().last_name;
+    }
+    catch (error) {
+      return "";
+    }
+  }
+
+  public getImageCaption(): string {
+    try {
+      return this.data().result;
+    }
+    catch (error) {
+      return "";
+    }
+  }
+
+  public getMatch(): string {
+    try {
+      return this.data().match;
+    }
+    catch (error) {
+      return "";
+    }
   }
 }
 
