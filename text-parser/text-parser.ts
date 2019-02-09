@@ -11,6 +11,7 @@ function ParseKeywords(input: string): boolean | string[]
   const splitted: string[] = keywords.split(/\r\n|\r|\n/).map((word) => word.toLowerCase());
   const splittedAgain: string[][] = splitted.map((word) => word.split(' '));
 
+
   for (let i = 0; i < inputArray.length; i++) {
     for (const phrase of splittedAgain) {
       let failed: boolean = false;
@@ -28,3 +29,5 @@ function ParseKeywords(input: string): boolean | string[]
   }
   return false;
 }
+
+console.log(ParseKeywords(""));

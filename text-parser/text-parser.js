@@ -8,6 +8,12 @@ function ParseKeywords(input) {
     const splitted = keywords.split(/\r\n|\r|\n/).map((word) => word.toLowerCase());
     const splittedAgain = splitted.map((word) => word.split(' '));
     let len = inputArray.length;
+
+    if (len === 1 && inputArray[0] === '')
+    {
+        return false;
+    }
+
     if (inputArray[len-1].substring(inputArray[len-1].length-1) == ".")
         {
             inputArray[len-1] = inputArray[len-1].substring(0, inputArray[len-1].length-1);
