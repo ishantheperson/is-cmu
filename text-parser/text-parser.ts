@@ -28,6 +28,3 @@ function ParseKeywords(input: string): boolean | string[]
   }
   return false;
 }
-
-console.log(ParseKeywords("jacobo"));
-console.log(ParseKeywords("potato"));
