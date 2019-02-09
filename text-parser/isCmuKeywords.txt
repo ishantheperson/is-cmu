@@ -40,7 +40,8 @@ uc stones
 John Mackey
 Tom Cortina
 JACOBO
-2.9% tuition increase
+2.9 percent tuition increase
+2.9% percent tuition increase
 Concepts
 10 Academy Awards
 127 Emmy Awards
@@ -79,7 +80,8 @@ the cut
 tuition
 Walking to the Sky
 Heinz
-#1 in Computer Science
+number one in Computer Science
+#1 in computer science
 Better than MIT
 Better than Stanford
 Better than Berkeley
