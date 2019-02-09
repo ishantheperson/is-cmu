@@ -5,12 +5,16 @@ class SocketWrapper {
     this.socket = io({ reconnection: false });
   }
 
-  Go(): void {
-    // this.socket.emit(); // hello
+  public SendText(text: string): void {
+    this.socket.emit("textData", text);
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   const wrapper = new SocketWrapper();
-  wrapper.Go();
+  
+  document.getElementById("textSubmit").addEventListener("click", () => {
+    const text = (document.getElementById("text") as HTMLInputElement).value;
+    wrapper.SendText(text);
+  });
 });
