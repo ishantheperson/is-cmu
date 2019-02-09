@@ -20,6 +20,14 @@ class SocketWrapper {
                 viewmodel.setData(data.data);
             }
         });
+        this.socket.on("speechResult", (data) => {
+            if (!data.success) {
+                viewmodel.setScreen("speechFail");
+                return;
+            }
+            viewmodel.setScreen("speechResultArea");
+            viewmodel.setData(data.data);
+        });
         this.socket.on("imageResult", (data) => {
             console.log(data);
             viewmodel.setScreen("imageResultArea");
@@ -85,6 +93,14 @@ class IsCMU {
     getMatch() {
         try {
             return this.data().match;
+        }
+        catch (error) {
+            return "";
+        }
+    }
+    getSpeech() {
+        try {
+            return this.data().speech;
         }
         catch (error) {
             return "";

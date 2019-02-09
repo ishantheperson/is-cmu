@@ -78,14 +78,24 @@ io.on("connection", function (socket) {
 
           socket.emit("status", "Requesting speech-to-text from Microsoft...");
           stt.SpeechToText("temp.wav", (text) => {
+            console.log("Received text", text);
+
+            if (!text) {
+              socket.emit("speechResult", {
+                success: false
+              });
+              return; // failure?
+            }
             socket.emit("status", "Parsing...");
             const parserResult = textParser.ParseKeywords(text);
 
-            socket.emit("textResult", {
-              success: true,
-              type: "parser",
-              data: { match: parserResult.join(' '), speech: text }
-            })
+            const msg = {
+              success: !!parserResult,
+              type: "parser"
+            };
+            if (parserResult) msg.data = { match: parserResult.join(' '), speech: text };
+
+            socket.emit("speechResult", msg);
           })
         });
       });

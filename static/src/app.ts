@@ -30,6 +30,16 @@ class SocketWrapper {
       }
     });
 
+    this.socket.on("speechResult", (data) => {
+      if (!data.success) {
+        viewmodel.setScreen("speechFail");
+        return;
+      }
+
+      viewmodel.setScreen("speechResultArea");
+      viewmodel.setData(data.data);
+    });
+
     this.socket.on("imageResult", (data) => {
       console.log(data);
       viewmodel.setScreen("imageResultArea");
@@ -116,6 +126,15 @@ class IsCMU {
   public getMatch(): string {
     try {
       return this.data().match;
+    }
+    catch (error) {
+      return "";
+    }
+  }
+
+  public getSpeech(): string {
+    try {
+      return this.data().speech;
     }
     catch (error) {
       return "";
