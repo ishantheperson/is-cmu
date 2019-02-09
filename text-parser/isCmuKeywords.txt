@@ -54,3 +54,6 @@ The good place
 Alice
 Java
 Captcha
+stress
+tartanhacks
+hackcmu
