@@ -6,7 +6,8 @@
     "sourceMap": true
   },
   "include": [
-    "static/src/*"
+    "static/src/*",
+    "text-parser/*"
   ],
   "exclude": [
     "node_modules/"

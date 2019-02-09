@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ishantheperson/is-cmu#readme",
   "dependencies": {
+    "@types/node": "^10.12.24",
     "@types/socket.io-client": "^1.4.32",
     "express": "^4.16.4",
     "request": "^2.88.0",
