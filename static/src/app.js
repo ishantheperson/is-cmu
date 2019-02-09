@@ -5,6 +5,24 @@ class SocketWrapper {
         this.socket.on("status", (data) => {
             this.viewmodel.setStatus(data);
         });
+        this.socket.on("textResult", (data) => {
+            console.log(data);
+            if (!data.success) {
+                this.viewmodel.setScreen("textFail");
+                return;
+            }
+            if (data.type === "dictLookup") {
+                viewmodel.setScreen("dictLookupArea");
+                viewmodel.setData(data.data);
+            }
+            else { // data.type === "parser"
+                viewmodel.setScreen("parserResultArea");
+                viewmodel.setData(data.phrase);
+            }
+        });
+        this.socket.on("imgResult", (data) => {
+            console.log(data);
+        });
     }
     SendText(text) {
         this.socket.emit("textData", text);
@@ -22,14 +40,19 @@ class IsCMU {
     constructor() {
         this.currentScreen = ko.observable("methodSelect");
         this.status = ko.observable("");
+        this.data = ko.observable({});
         this.setScreen = this.setScreen.bind(this);
         this.setStatus = this.setStatus.bind(this);
+        this.setData = this.setData.bind(this);
     }
     setScreen(screen) {
         this.currentScreen(screen);
     }
     setStatus(status) {
         this.status(status);
+    }
+    setData(data) {
+        this.data(data);
     }
 }
 document.addEventListener("DOMContentLoaded", () => {

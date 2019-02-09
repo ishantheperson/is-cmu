@@ -6,9 +6,31 @@ class SocketWrapper {
     this.viewmodel = viewmodel;
 
     this.socket = io({ reconnection: false });
-    this.socket.on("status", (data) => {
+    this.socket.on("status", (data: string) => {
       this.viewmodel.setStatus(data);
     });
+
+    this.socket.on("textResult", (data) => {
+      console.log(data);
+
+      if (!data.success) {
+        this.viewmodel.setScreen("textFail");
+        return;
+      }
+
+      if (data.type === "dictLookup") {
+        viewmodel.setScreen("dictLookupArea");
+        viewmodel.setData(data.data);
+      }
+      else { // data.type === "parser"
+        viewmodel.setScreen("parserResultArea");
+        viewmodel.setData(data.phrase);
+      }
+    });
+
+    this.socket.on("imgResult", (data) => {
+      console.log(data);
+    })
   }
 
   public SendText(text: string): void {
@@ -29,13 +51,16 @@ class SocketWrapper {
 class IsCMU {
   private currentScreen: KnockoutObservable<string>;
   private status: KnockoutObservable<string>;
+  private data: any;
 
   constructor() {
     this.currentScreen = ko.observable("methodSelect");
     this.status = ko.observable("");
+    this.data = ko.observable({});
 
     this.setScreen = this.setScreen.bind(this);
     this.setStatus = this.setStatus.bind(this);
+    this.setData = this.setData.bind(this);
   }
 
   public setScreen(screen: string) {
@@ -44,6 +69,10 @@ class IsCMU {
 
   public setStatus(status: string) {
     this.status(status);
+  }
+
+  public setData(data: any) {
+    this.data(data);
   }
 }
 

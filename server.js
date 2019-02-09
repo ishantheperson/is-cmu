@@ -23,6 +23,7 @@ io.on("connection", function (socket) {
     // console.log(textParser.ParseKeywords(data));
 
     const parserResult = textParser.ParseKeywords(data);
+    console.log(parserResult);
     if (parserResult) {
       console.log(parserResult)
       socket.emit("textResult", {

@@ -53,6 +53,45 @@
           <p id="workArea" data-bind="html: status"></p>
           <h2>Working...🤔🤔🤔</h2>
         </div>
+
+        <!-- Result areas -->
+        <div id="parserResultArea" data-bind="visible: currentScreen() === 'parserResultArea'">
+          <h2>Success!</h2>
+          <p>That was CMU! (<span data-bind="text: data"></span>)</p>
+
+          <p class="backLink" data-bind="click: setScreen('methodSelect')">
+            Try again?
+          </p>  
+        </div>
+
+        <div id="dictLookupArea" data-bind="visible: currentScreen() === 'dictLookupArea'">
+          <h2>Success!</h2>
+          <p>That was CMU!</p>
+          <p><b>Andrew ID: </b><span data-bind="text: data().first_name + ' ' + data().last_name"></span></p>
+
+          <p class="backLink" data-bind="click: setScreen('methodSelect')">
+            Try again?
+          </p>  
+        </div>
+
+        <div id="imageResultArea" data-bind="visible: currentScreen() === 'imageResultArea'">
+          <h2>Success!</h2>
+          <p>That was CMU!</p>
+          <p>
+            <b>Image subject: </b>
+            <p data-bind="text: data().result"></p>
+          </p>
+        </div>
+
+        <!-- Failure areas -->
+        <div id="textFail" data-bind="visible: currentScreen() === 'textFail'">
+          <h2>Nope!</h2>
+          <!-- Wow so quirky!!1!! -->
+          <p>That wasn't CMU 😭. We tried really hard, promise!</p>
+          <p class="backLink" data-bind="click: setScreen('methodSelect')">
+            Try again?
+          </p>
+        </div>
       </div>
     </div>
   </body>
