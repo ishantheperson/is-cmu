@@ -134,6 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
             recordRTC.stopRecording((audioURL) => {
                 wrapper.SendAudio(recordRTC.getBlob());
             });
+            viewmodel.setScreen("statusArea");
         }
     }
 });
