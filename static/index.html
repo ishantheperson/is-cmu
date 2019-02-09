@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Is it CMU?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="style.css" rel="stylesheet" type="text/css">
     <link href="assets/loader.css" rel="stylesheet" type="text/css">
@@ -58,7 +58,8 @@
         <div id="micEntryArea" data-bind="visible: currentScreen() === 'micEntryArea'">
           <img class="mic" src="assets/microphone.svg" data-bind="visible: !isRecording(), click: toggleRecording">
           <img class="mic" src="assets/microphone-active.svg" data-bind="visible: isRecording, click: toggleRecording">
-          <p>Click the microphone to record</p>
+          <p>Click the microphone to toggle recording</p>
+          <p class="backLink" data-bind="click: setScreen('methodSelect')">Back</p>
         </div>
 
         <div id="statusArea" data-bind="visible: currentScreen() === 'statusArea'">
