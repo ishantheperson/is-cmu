@@ -7,6 +7,7 @@ const io = require("socket.io")(server);
 
 const textParser = require("./text-parser/text-parser");
 const reverseImgSearch = require("./reverse-image-search/reverse-search");
+const dictionaryGetter = require("./text-parser/DirectoryGetter");
 
 console.info("Server listening on port", PORT);
 server.listen(PORT);
@@ -19,6 +20,10 @@ io.on("connection", function (socket) {
   socket.on("textData", (data) => {
     // This is called when the user sends a text input
     console.log(textParser.ParseKeywords(data));
+    dictionaryGetter.andrewidLookup(data, (result) => {
+      console.log(result);
+      socket.emit("result", result || textParser.ParseKeywords(data));
+    });
   });
 
   socket.on("imageData", (data) => {

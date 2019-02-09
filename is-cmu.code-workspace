@@ -12,8 +12,8 @@
 			"**/.git": true,
 			"**/.DS_Store": true,
 			".gitignore": true,
-			"package-lock.json": true,
-			"package.json": true,
+			//"package-lock.json": true,
+			//"package.json": true,
 			"node_modules": true
 		}
 	}
