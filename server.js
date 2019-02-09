@@ -57,9 +57,9 @@ io.on("connection", function (socket) {
       const isCMU = textParser.ParseKeywords(result);
 
       socket.emit("imageResult", {
-        success: isCMU,
+        success: !!isCMU,
         data: { result } // the result from the reverse image search
-      })
+      });
 
     }, (status) => {
       socket.emit("status", status);
