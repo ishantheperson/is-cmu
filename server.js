@@ -19,20 +19,18 @@ io.on("connection", function (socket) {
 
   socket.on("textData", (data) => {
     socket.emit("status", "Server received text");
-    // This is called when the user sends a text input
-    // console.log(textParser.ParseKeywords(data));
-
+    
     const parserResult = textParser.ParseKeywords(data);
     console.log(parserResult);
+  
     if (parserResult) {
-      console.log(parserResult)
       socket.emit("textResult", {
         success: true,
         type: "parser",
         phrase: parserResult.join(' ')
       })
 
-      return; // We don't need to do a dictionary lookup here
+      return; // We don't need to do a dictionary lookup if the parser succeeded
     }
 
     dictionaryGetter.andrewidLookup(data, (result, data) => {

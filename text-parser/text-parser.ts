@@ -8,7 +8,7 @@ function ParseKeywords(input: string): boolean | string[]
 {
   const inputArray: string[] = input.split(' ').map((word) => word.toLowerCase());
   const keywords = fs.readFileSync("text-parser/isCmuKeywords.txt").toString();
-  const splitted: string[] = keywords.split('\r\n').map((word) => word.toLowerCase());
+  const splitted: string[] = keywords.split(/\r\n|\r|\n/).map((word) => word.toLowerCase());
   const splittedAgain: string[][] = splitted.map((word) => word.split(' '));
 
   for (let i = 0; i < inputArray.length; i++) {

@@ -57,7 +57,7 @@
         <!-- Result areas -->
         <div id="parserResultArea" data-bind="visible: currentScreen() === 'parserResultArea'">
           <h2>Success!</h2>
-          <p>That was CMU! (<span data-bind="text: data"></span>)</p>
+          <p>That was CMU! (match: <span style="font-weight: bold" data-bind="text: data"></span>)</p>
 
           <p class="backLink" data-bind="click: setScreen('methodSelect')">
             Try again?

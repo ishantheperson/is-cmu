@@ -30,6 +30,8 @@ class SocketWrapper {
 
     this.socket.on("imgResult", (data) => {
       console.log(data);
+      viewmodel.setScreen("imageResultArea");
+      viewmodel.setData(data.phrase); // FIXME 
     })
   }
 
