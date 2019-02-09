@@ -2,12 +2,15 @@ class SocketWrapper {
     constructor() {
         this.socket = io({ reconnection: false });
     }
-    Go() {
-        // this.socket.emit(); // hello
+    SendText(text) {
+        this.socket.emit("textData", text);
     }
 }
 document.addEventListener("DOMContentLoaded", () => {
     const wrapper = new SocketWrapper();
-    wrapper.Go();
+    document.getElementById("textSubmit").addEventListener("click", () => {
+        const text = document.getElementById("text").value;
+        wrapper.SendText(text);
+    });
 });
 //# sourceMappingURL=app.js.map
