@@ -4,10 +4,12 @@ const express = require("express");
 const app = express();
 const server = require("http").Server(app);
 const io = require("socket.io")(server);
-
+const fs = require("fs");
+const childProcess = require("child_process");
 const textParser = require("./text-parser/text-parser");
 const reverseImgSearch = require("./reverse-image-search/reverse-search");
 const dictionaryGetter = require("./text-parser/DirectoryGetter");
+const stt = require("./speech-to-text/speech-to-text.js");
 
 console.info("Server listening on port", PORT);
 server.listen(PORT);
@@ -22,7 +24,7 @@ io.on("connection", function (socket) {
 
     const parserResult = textParser.ParseKeywords(data);
     console.log(parserResult);
-  
+
     if (parserResult) {
       socket.emit("textResult", {
         success: true,
@@ -34,7 +36,7 @@ io.on("connection", function (socket) {
     }
 
     dictionaryGetter.andrewidLookup(data, (result, data) => {
-      console.log(result, data); 
+      console.log(result, data);
 
       socket.emit("textResult", {
         success: result,
@@ -54,7 +56,7 @@ io.on("connection", function (socket) {
       const isCMU = textParser.ParseKeywords(result);
 
       socket.emit("imageResult", {
-        success: isCMU, 
+        success: isCMU,
         data: { result } // the result from the reverse image search
       })
 
@@ -65,5 +67,28 @@ io.on("connection", function (socket) {
 
   socket.on("audioData", (data) => {
     console.log("Received audio data", data);
+    socket.emit("status", "Server received audio data");
+
+    fs.unlink("./temp.webm", (error) => {
+      fs.writeFile("./temp.webm", data, (error) => {
+        socket.emit("status", "Converting...");
+
+        fs.unlink("./temp.wav", (error) => {
+          const proc = childProcess.execSync("ffmpeg -i temp.webm -acodec pcm_s16le -ar 16000 temp.wav")
+
+          socket.emit("status", "Requesting speech-to-text from Microsoft...");
+          stt.SpeechToText("temp.wav", (text) => {
+            socket.emit("status", "Parsing...");
+            const parserResult = textParser.ParseKeywords(text);
+
+            socket.emit("textResult", {
+              success: true,
+              type: "parser",
+              data: { match: parserResult.join(' '), speech: text }
+            })
+          })
+        });
+      });
+    });
   });
 });
