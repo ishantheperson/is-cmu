@@ -98,6 +98,20 @@
           </p>
         </div>
 
+        <div id="imageFail" data-bind="visible: currentScreen() === 'imageFail'">
+            <h2>Nope!</h2>
+            <!-- Wow so quirky!!1!! -->
+            <p>That wasn't CMU 😭. We tried really hard, promise!</p>
+            <p>
+              <b>Image subject: </b>
+              <p data-bind="text: getImageCaption()"></p>
+            </p>
+
+            <p class="backLink" data-bind="click: setScreen('methodSelect')">
+              Try again?
+            </p>            
+        </div>
+
         <div id="speechResultArea" data-bind="visible: currentScreen() === 'speechResultArea'">
             <h2>Success!</h2>
             <p>You said: <span style="font-weight: bold" data-bind="text: getSpeech()"></span></p>

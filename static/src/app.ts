@@ -42,9 +42,9 @@ class SocketWrapper {
     });
 
     this.socket.on("imageResult", (data) => {
-      console.log(data);
-      viewmodel.setScreen("imageResultArea");
-      viewmodel.setData(data.phrase); // FIXME 
+      if (data.success) viewmodel.setScreen("imageResultArea");
+      else viewmodel.setScreen("imageFail")
+      viewmodel.setData(data.phrase); 
     })
   }
 
