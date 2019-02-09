@@ -78,11 +78,11 @@ io.on("connection", function (socket) {
 
           socket.emit("status", "Requesting speech-to-text from Microsoft...");
           stt.SpeechToText("temp.wav", (text) => {
-            console.log("Received text", text);
+            console.log(`Received text "${text}"`);
 
             if (!text) {
-              socket.emit("speechResult", {
-                success: false
+              socket.emit("textResult", {
+                success: false,
               });
               return; // failure?
             }
@@ -91,11 +91,15 @@ io.on("connection", function (socket) {
 
             const msg = {
               success: !!parserResult,
-              type: "parser"
+              data: { speech: text }
             };
-            if (parserResult) msg.data = { match: parserResult.join(' '), speech: text };
+            if (parserResult) msg.data.match = parserResult.join(' ');
 
             socket.emit("speechResult", msg);
+
+            // Clean up
+            fs.unlinkSync("temp.wav");
+            fs.unlinkSync("temp.webm");
           })
         });
       });
