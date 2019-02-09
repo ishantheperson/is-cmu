@@ -43,6 +43,7 @@ for(let inputFile of inputFiles)
     if(count > 5)
     {
       courseNames += ("\n" + course);
+      courseNames += ("\n" + course.slice(0,2)+course.slice(3,6));
       courseNames += ("\n" + courseObject.name)
     }
 
