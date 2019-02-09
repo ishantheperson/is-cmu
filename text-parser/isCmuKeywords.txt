@@ -129,3 +129,309 @@ Waitlist
 Newell
 Simon
 Blum
+functions are values
+functions are pointers
+plaid
+John Hall
+Lars Peter Hansen
+Finn Kydland
+Robert Lucas, Junior
+Robert Lucas, Jr
+Merton Miller
+Franco Modigliani
+Dale Thomas Mortensen
+Edward Prescott
+Clifford Shull
+Herbert Simon
+Oliver Williamson
+Edward Feigenbaum
+Raj Reddy
+Shafi Goldwasser
+Ivan Sutherland
+Raoul Bott
+George Cowan
+Daniel Nagin
+Raoul Bott
+George Pake
+Frederick Rossini 
+Robert Dennard 
+Stephanie Kwolek
+Mary Shaw
+Frank Stulen
+Luis von Ahn
+Stefan Savage
+Dawn Song
+Paul Allaire
+Kushagra Bajaj
+Keith Block
+Francisco D'Souza 
+Dina Dublon
+Marc Ewing
+Yoshiaki Fujimori
+Scott Griffith
+Cormac Kinney
+Alexander Knaster 
+Jim Levy
+Frank Marshall
+Gerald C. Meyers
+Ted Nierenberg
+David Tepper
+Madhavi Vuppalapati
+Romesh Wadhwani
+Charles Erwin Wilson
+Sulajja Firodia Motwani
+Sunil Wadhwani
+Kimberly W. Anderson
+Allen Barnett
+Andy Bechtolsheim
+Joshua Bloch
+Nik Bonaddio
+Nathaniel Borenstein
+Mark Canepa
+Jane C. Charlton
+Bob Colwell
+Robert Dennard
+Scott Fahlman
+Gerald Gardner
+Charles Geschke
+James J. Gillogly
+Virgil D. Gligor
+Feng-hsiung Hsu
+Phil Karn
+Vinod Khosla
+James H. Kindelberger
+Kai-Fu Lee
+Qi Lu
+Mao Yisheng
+Edgar Mitchell
+James G. Mitchell
+Harvey C. Nathanson
+Bruce J. Nelson
+Andrew Ng
+John Ousterhout 
+David Parnas
+Drew D. Perkins
+Judith Resnik
+Mark Russinovich
+Mahadev Satyanarayanan 
+Joshua Schachter
+Jonathan I. Schwartz
+Harry Shum
+Pradeep Sindhu
+Javier Soltero
+Ivan Sutherland
+Shanghua Teng
+Avie Tevanian
+Richard Wallace
+Red Whittaker
+Yishan Wong
+William Atherton
+Jason Antoon
+René Auberjonois
+William Ball
+Brent Barrett
+Shari Belafonte
+Natalie Venetia 
+Benny Benack
+Lourdes Benedicto
+Denée Benton
+Paul Ben-Victor
+Bridget Berger
+Steven Bochco
+Matthew Bomer
+Liam Bonner
+Christian Borle
+Barbara Bosson
+Abby Brammell
+Albert Brooks
+Robert Brooks
+Lori Cardille
+Jack Carpenter
+Jean Carson
+Eduardo Castro
+Arthur Chadwick
+Donna Lynne Champlin
+Carol Channing
+Gaius Charles
+Francois Clemmons
+Rhys Coiro
+Frank Converse
+Casey Cott
+Corey Cott
+Ellen Crawford
+James Cromwell
+Bob Cummings
+Ted Danson
+Joan Darling
+Cote de Pablo
+Nicole DeHuff
+Kim Director
+Dagmara Dominczyk
+Neil Druckmann
+Peggy Eisenhauer
+Esteban
+Abe Feder
+Barbara Feldon
+Jules Fisher
+Seth Fisher
+Sutton Foster
+Robert Foxworth
+Mark Frost
+Sidney Furie
+Josh Gad
+Herb Gardner
+Michael Goldenberg
+Renee Elise Goldsberry
+Frank Gorshin
+Ralph Guggenheim
+Javier Grillo-Marxuach
+Josh Groban
+Demetrius Grosse
+Kristen Hahn
+Charles Haid
+Van Hansis
+Ian Harding
+Mariette Hartley
+Lisa Hartman-Black
+David Haskell
+Ethan Hawke
+Sian Heder
+Grey Henson
+Hunter Ryan Herdlicka
+Megan Hilty
+Leonard "Hub" Hubbard
+Leonard Hubbard
+Chuck Hittinger
+David Hornsby
+Holly Hunter
+Sam Hyde
+James Jacks
+Cherry Jones
+Kourtney Kang
+Caren Kaye
+Jessica Kender
+Arthur Kennedy
+Jack Klugman
+Frederick Koehler
+Michael Kooman
+David Lander
+David Larsen
+William Law
+Eugene Lee
+Telly Leung
+Kara Lindsay
+Judith Light
+Keith Lockhart
+Arthur Lubin
+Gabriel Macht
+Erin Mackey
+Henry Mancini
+Joe Manganiello
+Sonia Manzano
+Nancy Marchand
+Rob Marshall
+Henry Mazer
+Gilmer McCormick
+John McDaniel
+Michael McKean
+Michael McMillian
+James Meena
+Patina Miller
+Corey Moosa
+Katy Mixon
+Roger Morgan
+Greg Mottola
+Jeffrey Mylett
+David Norona
+Vince O'Brien
+Leslie Odom, Jr.
+Leslie Odom Junior
+Leslie Odom
+Rory O'Malley
+Oopali Operajita
+Stephanie Palmer
+Van Dyke Parks
+John Pasquin
+Victoria Pedretti
+George Peppard
+Fern Persons
+Martin Platt
+John C. Picardi
+Stephen Prince
+Zachary Quinto
+Sally Jessy Raphaël
+Lester Rawlins
+Norman René
+Darren Ritchie
+Kali Rocha
+Lori Rom
+George A. Romero
+Ann Roth
+Polly Rowles
+Laura San Giacomo
+Lou Scheimer
+Mary Kate Schellhardt
+Robert Schmertz
+Pablo Schreiber
+Stephen Schwartz
+Kyle Selig
+John Shaffer
+Mel Shapiro
+Leigh Silverman
+Emily Skinner
+Josef Sommer
+Aaron Staton
+Patricia Tallman
+John-Michael Tebelak
+Irene Tedrow
+Jim Tetlow
+Thom Thomas
+Sada Thompson
+Michael Tucker
+Tamara Tunie
+William J. G. Turner
+Blair Underwood
+Michelle Veintimilla
+Paula Wagner
+Loudon Wainwright III
+Bruce Weitz
+John Wells
+Ming-Na Wen
+Daniel Wilson
+Patrick Wilson
+George Wood
+Bud Yorkin
+Mel Bochner
+Jonathan Borofsky
+Mia Brownell
+Sheila Butler
+Virgil Cantini
+Elizabeth Carpenter
+John Currin
+Ken Ferguson
+Raymond Kaskey
+Joyce Kozloff
+Burton Morris
+Shalom Neuman
+Philip Pearlstein
+Richard Rappaport
+Abigail Satinsky
+Roger Duffy
+Dan Friedman
+David Kelley
+Christian Schwartz
+Steven Song
+Clinton Davisson
+Otto Stern
+Paul Flory
+Herbert A. Simon
+Franco Modigliani
+Merton Miller
+Robert Lucas Jr
+John Pople
+Lars Peter Hansen
+Walter Kohn
+Paul Lauterbur
+Finn E. Kydland
+Edward C. Prescott
+Ada Yonath 
