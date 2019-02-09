@@ -52,6 +52,7 @@ io.on("connection", function (socket) {
     socket.emit("status", "Server received image");
 
     reverseImgSearch.ReverseSearch(data, (result) => {
+      console.log(`Reverse search yielded "${result}"`);
       socket.emit("status", `Server received result from Google: <b>${result}</b>`);
       const isCMU = textParser.ParseKeywords(result);
 

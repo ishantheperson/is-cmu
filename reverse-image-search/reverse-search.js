@@ -32,6 +32,7 @@ function UploadImgur(data, onComplete) {
 }
 function QueryGoogle(imageLink, callback) {
     const googleLink = GOOGLE_URL + imageLink;
+    console.log(`Downloading ${googleLink}`);
     const curl = new Curl();
     curl.setOpt("URL", googleLink);
     curl.setOpt("FOLLOWLOCATION", true);

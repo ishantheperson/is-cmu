@@ -6,6 +6,7 @@ module.exports = {
 
 function ParseKeywords(input: string): boolean | string[]
 {
+  if (input === "") return false;
   const inputArray: string[] = input.split(' ').map((word) => word.toLowerCase());
   const keywords = fs.readFileSync("text-parser/isCmuKeywords.txt").toString();
   const splitted: string[] = keywords.split(/\r\n|\r|\n/).map((word) => word.toLowerCase());
@@ -29,5 +30,3 @@ function ParseKeywords(input: string): boolean | string[]
   }
   return false;
 }
-
-console.log(ParseKeywords(""));
