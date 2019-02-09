@@ -14,7 +14,8 @@
         "no-reference": false,
         "no-trailing-whitespace": false,
         "no-angle-bracket-type-assertion": false,
-        "max-classes-per-file": false
+        "max-classes-per-file": false,
+        "no-var-requires": false,
     },
     "rulesDirectory": []
 }

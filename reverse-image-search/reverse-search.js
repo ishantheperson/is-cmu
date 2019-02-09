@@ -39,7 +39,10 @@ function QueryGoogle(imageLink, callback) {
     curl.on("end", (status, body, headers) => {
         callback(body);
     });
-    curl.on("error", curl.close.bind(curl));
+    curl.on("error", (err) => {
+        console.error(err);
+        curl.close();
+    });
     curl.perform();
 }
 //# sourceMappingURL=reverse-search.js.map
