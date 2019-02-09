@@ -138,7 +138,7 @@ video {
   padding: 2em;
 }
 
-.methodSelect div:hover {
+.methodSelect div:hover, .methodSelect div:active {
   transition-duration: 0.5s;
   background: #b20707 none;
 }

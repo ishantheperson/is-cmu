@@ -63,9 +63,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     catch (error) { 
       // oh well it really do be like that sometimes
-      // probably indicates 
+      // probably indicates something wrong with the user's input
     }
-  })
+  });
 
   document.getElementById("textSubmit").addEventListener("click", () => {
     const text = (document.getElementById("text") as HTMLInputElement).value.trim();
