@@ -42,6 +42,8 @@ io.on("connection", function (socket) {
         type: "dictLookup",
         data: data
       });
+    }, (status) => {
+      socket.emit("status", status);
     });
   });
 
