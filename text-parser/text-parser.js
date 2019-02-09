@@ -5,7 +5,7 @@ module.exports = {
 function ParseKeywords(input) {
     const inputArray = input.split(' ').map((word) => word.toLowerCase());
     const keywords = fs.readFileSync("text-parser/isCmuKeywords.txt").toString();
-    const splitted = keywords.split('\r\n').map((word) => word.toLowerCase());
+    const splitted = keywords.split(/\r\n|\r|\n/).map((word) => word.toLowerCase());
     const splittedAgain = splitted.map((word) => word.split(' '));
     for (let i = 0; i < inputArray.length; i++) {
         for (const phrase of splittedAgain) {
@@ -23,7 +23,6 @@ function ParseKeywords(input) {
     }
     return false;
 }
-
-console.log(ParseKeywords("jaCObo"));
+console.log(ParseKeywords("jacobo"));
 console.log(ParseKeywords("potato"));
 //# sourceMappingURL=text-parser.js.map
