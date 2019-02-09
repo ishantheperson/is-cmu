@@ -48,6 +48,8 @@ request.post(options, (error, response, body) => {
       }
   }
   console.log(output)
+});
+
 
 
 // RIP @ BELOW IGNORE IGNORE IGNORE IGNORE IGNORE IGNORE IGNORE IGNORE IGNORE IGNORE
@@ -106,4 +108,3 @@ request.post(options, (error, response, body) => {
   console.log(a.substr(ind-7, ind));*/
 
 
-});
