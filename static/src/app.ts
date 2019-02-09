@@ -33,6 +33,7 @@ class SocketWrapper {
     this.socket.on("speechResult", (data) => {
       if (!data.success) {
         viewmodel.setScreen("speechFail");
+        viewmodel.setData(data.data);
         return;
       }
 
