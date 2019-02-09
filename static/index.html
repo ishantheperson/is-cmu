@@ -9,7 +9,9 @@
     <link href="assets/loader.css" rel="stylesheet" type="text/css">
     
     <script src="lib/knockout.js"></script>
+    <script src="lib/RecordRTC.js" async></script>
     <script src="/socket.io/socket.io.js"></script>
+
     <script src="src/app.js"></script>
   </head>
 
@@ -32,6 +34,11 @@
             <img src="assets/edit.svg">
             <p>Text</p>
           </div>
+
+          <div id="micSelect" data-bind="click: setScreen('micEntryArea')">
+            <img src="assets/microphone.svg">
+            <p>Speech</p>
+          </div>
         </div>
 
         <div id="imgUploadArea" data-bind="visible: currentScreen() === 'imgUploadArea'">
@@ -46,6 +53,12 @@
           <button id="textSubmit">Is it CMU?</button>
 
           <p class="backLink" data-bind="click: setScreen('methodSelect')">Back</p>
+        </div>
+
+        <div id="micEntryArea" data-bind="visible: currentScreen() === 'micEntryArea'">
+          <img class="mic" src="assets/microphone.svg" data-bind="visible: !isRecording(), click: toggleRecording">
+          <img class="mic" src="assets/microphone-active.svg" data-bind="visible: isRecording, click: toggleRecording">
+          <p>Click the microphone to record</p>
         </div>
 
         <div id="statusArea" data-bind="visible: currentScreen() === 'statusArea'">
@@ -91,6 +104,20 @@
           <p class="backLink" data-bind="click: setScreen('methodSelect')">
             Try again?
           </p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+          Developed by Ishan Bhargava, Kelly Yu, Sabrina Sukhin, and Albert Lu
+          &copy; 2019
+          <div>
+            Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> 
+            from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> 
+            licensed by
+            <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">
+              CC 3.0 BY
+            </a>
+            </div>
         </div>
       </div>
     </div>

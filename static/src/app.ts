@@ -1,3 +1,5 @@
+declare var RecordRTC;
+
 class SocketWrapper {
   private socket: SocketIOClient.Socket;
   private viewmodel: IsCMU;
@@ -48,6 +50,10 @@ class SocketWrapper {
 
     reader.readAsDataURL(file);
   }
+
+  public SendAudio(data: any): void {
+    this.socket.emit("audioData", data);
+  }
 }
 
 class IsCMU {
@@ -55,19 +61,27 @@ class IsCMU {
   private status: KnockoutObservable<string>;
   private data: any;
 
-  constructor() {
+  private isRecording: KnockoutObservable<boolean>;
+  private recordCallback: any;
+
+  constructor(recordCallback) {
     this.currentScreen = ko.observable("methodSelect");
     this.status = ko.observable("");
     this.data = ko.observable({});
+    this.isRecording = ko.observable(false);
+
+    this.recordCallback = recordCallback;
 
     this.setScreen = this.setScreen.bind(this);
     this.setStatus = this.setStatus.bind(this);
     this.setData = this.setData.bind(this);
+    this.toggleRecording = this.toggleRecording.bind(this);
   }
 
   public setScreen(screen: string) {
     if (screen === "methodSelect") { // reset
-      this.setStatus("");
+      //location.reload();
+      this.status("");
     }
 
     this.currentScreen(screen);
@@ -107,11 +121,19 @@ class IsCMU {
       return "";
     }
   }
+
+  public toggleRecording() {
+    this.isRecording(!this.isRecording());
+    this.recordCallback(this.isRecording());
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const viewmodel = new IsCMU();
+  const viewmodel = new IsCMU(recordCallback);
   const wrapper = new SocketWrapper(viewmodel);
+  let recordRTC = null;
+  const session = { audio: true, video: false };
+
   ko.applyBindings(viewmodel);
 
   document.getElementById("imgSubmit").addEventListener("click", () => {
@@ -137,4 +159,18 @@ document.addEventListener("DOMContentLoaded", () => {
       wrapper.SendText(text);
     }
   });  
+
+  function recordCallback(isRecording: boolean) {
+    if (isRecording) {
+      navigator.getUserMedia(session, (stream) => {
+        recordRTC = RecordRTC(stream);
+        recordRTC.startRecording();
+      }, console.error);
+    }
+    else {
+      recordRTC.stopRecording((audioURL) => {
+        wrapper.SendAudio(recordRTC.getBlob()); 
+      });
+    }
+  }
 });
