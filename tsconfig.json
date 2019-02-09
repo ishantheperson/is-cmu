@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "none",
+    "target": "es2017",
+
+    "sourceMap": true
+  },
+  "include": [
+    "static/src/*"
+  ],
+  "exclude": [
+    "node_modules/"
+  ]
+}

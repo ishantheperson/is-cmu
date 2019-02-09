@@ -1,0 +1,19 @@
+{
+    "defaultSeverity": "warning",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": {
+        "curly": false,
+        "whitespace": [ false, "check-typecast" ],
+        "one-line": false,
+        "trailing-comma": false,
+        "interface-over-type-literal": false,
+        "object-literal-sort-keys": false,
+        "no-reference": false,
+        "no-trailing-whitespace": false,
+        "no-angle-bracket-type-assertion": false
+    },
+    "rulesDirectory": []
+}
