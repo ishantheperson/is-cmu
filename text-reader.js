@@ -12,7 +12,7 @@ const uriBase =
     'https://eastus.api.cognitive.microsoft.com/vision/v2.0/ocr?language=en&detectOrientation=true';
 
 const imageUrl =
-    'https://i.stack.imgur.com/t35y7.png';
+    'https://indesignsecrets.com/wp-content/uploads/2011/01/rotateText3.png';
 
 // Request parameters.
 const params = {
@@ -36,11 +36,21 @@ request.post(options, (error, response, body) => {
     return;
   }
 
-  var obj = JSON.parse(body);
-  //console.log(typeof(obj));
-  //console.log(obj);
+  let obj = JSON.parse(body);
+  let output = '';
 
-// RIP @ BELOW
+  const {regions} = JSON.parse(body);
+  let lines = regions[0].lines.length;
+  for (let i = 0; i < lines; i++) {
+      for (let k = 0; k < regions[0].lines[i].words.length; k++) {
+          output += (regions[0].lines[i].words[k].text);
+          output += ' ';
+      }
+  }
+  console.log(output)
+
+
+// RIP @ BELOW IGNORE IGNORE IGNORE IGNORE IGNORE IGNORE IGNORE IGNORE IGNORE IGNORE
   /*let braceCount = 0;
   let isWord = false;
   let output = "";
@@ -79,10 +89,12 @@ request.post(options, (error, response, body) => {
   }
 
   console.log(output);
+*/
 
+  //let jsonResponse = JSON.stringify(JSON.parse(body), null, '  ');
+  //console.log(jsonResponse);
 
-  let jsonResponse = JSON.stringify(JSON.parse(body), null, '  ');
-
+/*
   //console.log(typeof jsonResponse);
   
   //console.log('JSON Response\n');
