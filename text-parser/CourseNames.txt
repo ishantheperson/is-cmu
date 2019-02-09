@@ -1,0 +1,151 @@
+
+48-100
+Architecture Design Studio: Foundation I
+48-300
+Architecture Design Studio: Integration I
+48-200
+Architecture Design Studio: Elaboration I
+48-400
+Advanced Synthesis Options Studio I
+48-500
+Advanced Synthesis Options Studio III
+70-122
+Introduction to Accounting
+09-105
+Introduction to Modern Chemistry I
+09-217
+Organic Chemistry I
+67-262
+Database Design and Development
+73-102
+Principles of Microeconomics
+18-213
+Introduction to Computer Systems
+79-104
+Genocide and Weapons of Mass Destruction
+38-101
+EUREKA: Discovery and Its Impact
+21-127
+Concepts of Mathematics
+21-120
+Differential and Integral Calculus
+21-256
+Multivariate Analysis
+21-259
+Calculus in Three Dimensions
+21-241
+Matrices and Linear Transformations
+21-260
+Differential Equations
+21-122
+Integration and Approximation
+24-452
+Mechanical Systems Experimentation
+80-100
+Introduction to Philosophy
+80-180
+Nature of Language
+33-141
+Physics I for Engineering Students
+33-142
+Physicss II for Engineering Students
+85-102
+Introduction to Psychology
+15-150
+Principles of Functional Programming
+15-151
+Mathematical Foundations for Computer Science
+15-122
+Principles of Imperative Computation
+15-210
+Parallel and Sequential Data Structures and Algorithms
+15-112
+Fundamentals of Programming and Computer Science
+15-251
+Great Ideas in Theoretical Computer Science
+15-213
+Introduction to Computer Systems
+15-110
+Principles of Computing
+15-451
+Algorithm Design and Analysis
+15-651
+Algorithm Design and Analysis
+17-214
+Principles of Software Construction: Objects, Design, and Concurrency
+17-514
+Principles of Software Construction: Objects, Design, and Concurrency
+36-200
+Reasoning with Data
+36-202
+Methods for Statistical Data Science
+48-205
+Architecture Design Studio: Elaboration II
+48-105
+Architecture Design Studio: Foundation II
+48-410
+ASOS II Lecture
+48-510
+Advanced Synthesis Options Studio IV
+70-257
+Optimization for Business
+09-101
+Introduction to Experimental Chemistry
+12-232
+Solid Mechanics Lab
+67-272
+Application Design and Development
+73-103
+Principles of Macroeconomics
+73-102
+Principles of Microeconomics
+18-213
+Introduction to Computer Systems
+79-104
+History of Democracy
+21-127
+Concepts of Mathematics
+21-122
+Integration and Approximation
+21-241
+Matrices and Linear Transformations
+21-256
+Multivariate Analysis
+21-259
+Calculus in Three Dimensions
+21-260
+Differential Equations
+80-100
+Introduction to Philosophy
+80-180
+Nature of Language
+33-141
+Physics I for Engineering Students
+33-142
+Physics II for Engineering and Physics Students
+85-102
+Introduction to Psychology
+15-110
+Principles of Computing
+15-213
+Introduction to Computer Systems
+15-150
+Principles of Functional Programming
+15-251
+Great Ideas in Theoretical Computer Science
+15-112
+Fundamentals of Programming and Computer Science
+15-210
+Parallel and Sequential Data Structures and Algorithms
+15-122
+Principles of Imperative Computation
+15-441
+Computer Networks
+15-451
+Algorithm Design and Analysis
+15-651
+Algorithm Design and Analysis
+36-200
+Reasoning with Data
+36-202
+Statistics & Data Science Methods
