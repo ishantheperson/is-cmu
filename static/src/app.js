@@ -34,7 +34,7 @@ class SocketWrapper {
                 viewmodel.setScreen("imageResultArea");
             else
                 viewmodel.setScreen("imageFail");
-            viewmodel.setData(data.phrase);
+            viewmodel.setData(data.data);
         });
     }
     SendText(text) {

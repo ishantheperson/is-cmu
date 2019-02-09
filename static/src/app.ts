@@ -44,7 +44,7 @@ class SocketWrapper {
     this.socket.on("imageResult", (data) => {
       if (data.success) viewmodel.setScreen("imageResultArea");
       else viewmodel.setScreen("imageFail")
-      viewmodel.setData(data.phrase); 
+      viewmodel.setData(data.data); 
     })
   }
 
