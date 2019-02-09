@@ -180,6 +180,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });  
 
+  document.getElementById("text").addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+      console.log("click");
+      document.getElementById("textSubmit").click();
+    }
+  });
+
   function recordCallback(isRecording: boolean) {
     if (isRecording) {
       navigator.getUserMedia(session, (stream) => {
