@@ -140,6 +140,12 @@ document.addEventListener("DOMContentLoaded", () => {
             wrapper.SendText(text);
         }
     });
+    document.getElementById("text").addEventListener("keypress", (event) => {
+        if (event.key === "Enter") {
+            console.log("click");
+            document.getElementById("textSubmit").click();
+        }
+    });
     function recordCallback(isRecording) {
         if (isRecording) {
             navigator.getUserMedia(session, (stream) => {
