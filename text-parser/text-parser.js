@@ -12,8 +12,13 @@ function ParseKeywords(input) {
         {
             inputArray[len-1] = inputArray[len-1].substring(0, inputArray[len-1].length-1);
         }
+    let notCount = 0;
     for (let i = 0; i < len; i++)
     {
+        if (inputArray[i] == "not")
+        {
+            notCount++;
+        }
         for (const phrase of splittedAgain)
         {
             let failed = false;
@@ -25,7 +30,7 @@ function ParseKeywords(input) {
                     break;
                 }
             }
-            if (!failed)
+            if (!failed && notCount % 2 == 0)
             {
                 return phrase;
             }
@@ -33,5 +38,8 @@ function ParseKeywords(input) {
     }
     return false;
 }
+
+console.log(ParseKeywords("not not John Mackey"));
+console.log(ParseKeywords("not John Mackey"));
 
 //# sourceMappingURL=text-parser.js.map
