@@ -39,7 +39,4 @@ function ParseKeywords(input) {
     return false;
 }
 
-console.log(ParseKeywords("not not John Mackey"));
-console.log(ParseKeywords("not John Mackey"));
-
 //# sourceMappingURL=text-parser.js.map
