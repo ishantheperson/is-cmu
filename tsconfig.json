@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
     "module": "none",
-    "target": "es2017",
+    "target": "es2016",
 
     "sourceMap": true
   },
   "include": [
-    "static/src/*"
+    "static/src/*",
+    "text-parser/*"
   ],
   "exclude": [
     "node_modules/"
