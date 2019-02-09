@@ -1,16 +1,18 @@
 const fs = require("fs");
 
+module.exports = {
+  ParseKeywords: ParseKeywords
+};
+
 function ParseKeywords(input: string): boolean
 {
   const keywords = fs.readFileSync("text-parser/isCmuKeywords.txt").toString();
-  const splitted = keywords.split('\r\n');
-  console.log(splitted);
+  const splitted: string[] = keywords.split('\r\n').map((word) => word.toLowerCase());
+  
 
-  if (splitted.indexOf(input) > -1)
+  if (splitted.indexOf(input.toLowerCase().trim()) !== -1)
   {
     return true;
   }
   return false;
 }
-
-console.log(ParseKeywords("John Mackey"));

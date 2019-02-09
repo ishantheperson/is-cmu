@@ -4,6 +4,7 @@ const express = require("express");
 const app = express();
 const server = require("http").Server(app);
 const io = require("socket.io")(server);
+const textParser = require("./text-parser/text-parser");
 
 server.listen(PORT);
 
@@ -14,6 +15,6 @@ io.on("connection", function (socket) {
 
   socket.on("textData", function (data) {
     // This is called when the user sends a text input
-    console.log(data);
+    console.log(textParser.ParseKeywords(data));
   });
 });
