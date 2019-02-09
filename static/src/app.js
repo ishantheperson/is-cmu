@@ -20,7 +20,7 @@ class SocketWrapper {
                 viewmodel.setData(data.phrase);
             }
         });
-        this.socket.on("imgResult", (data) => {
+        this.socket.on("imageResult", (data) => {
             console.log(data);
             viewmodel.setScreen("imageResultArea");
             viewmodel.setData(data.phrase); // FIXME 
@@ -48,6 +48,9 @@ class IsCMU {
         this.setData = this.setData.bind(this);
     }
     setScreen(screen) {
+        if (screen === "methodSelect") { // reset
+            this.setStatus("");
+        }
         this.currentScreen(screen);
     }
     setStatus(status) {
