@@ -39,11 +39,8 @@ request.post(options, (error, response, body) => {
   var obj = JSON.parse(body);
   //console.log(typeof(obj));
   //console.log(obj);
-  console.log(obj.regions);
-  let blah = obj.regions;
 
-  console.log(blah.boundingBox);
-
+// RIP @ BELOW
   /*let braceCount = 0;
   let isWord = false;
   let output = "";
