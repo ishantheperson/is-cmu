@@ -50,8 +50,6 @@ io.on("connection", function (socket) {
     socket.emit("status", "Server received image");
 
     reverseImgSearch.ReverseSearch(data, (result) => {
-      console.log("Yeet got this: ", result);
-      // TODO: process result
       socket.emit("status", `Server received result from Google: <b>${result}</b>`);
       const isCMU = textParser.ParseKeywords(result);
 
@@ -63,5 +61,9 @@ io.on("connection", function (socket) {
     }, (status) => {
       socket.emit("status", status);
     });
+  });
+
+  socket.on("audioData", (data) => {
+    console.log("Received audio data", data);
   });
 });
