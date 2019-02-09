@@ -23,4 +23,7 @@ function ParseKeywords(input) {
     }
     return false;
 }
+
+console.log(ParseKeywords("jaCObo"));
+console.log(ParseKeywords("potato"));
 //# sourceMappingURL=text-parser.js.map
