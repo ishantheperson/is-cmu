@@ -1,0 +1,22 @@
+{
+  "name": "is-cmu",
+  "version": "1.0.0",
+  "description": "Checks if the input is CMU",
+  "main": "is-cmu.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ishantheperson/is-cmu.git"
+  },
+  "author": "Ishan Bhargava, Sabrina Sukhin, Albert Lu, Kelly Lu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ishantheperson/is-cmu/issues"
+  },
+  "homepage": "https://github.com/ishantheperson/is-cmu#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
